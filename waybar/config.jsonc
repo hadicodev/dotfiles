@@ -1,0 +1,125 @@
+{
+    "layer": "top",
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "custom/media"
+    ],
+    "modules-right": [
+        "temperature",
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "network",
+        "clock",
+        "battery"
+    ],
+    "custom/launcher": {
+        "format": "󰣇 |",
+        "on-click": "/home/dragon/.config/waybar/scripts/app-launcher.sh",
+        "tooltip-format": "Launcher"
+    },
+    "hyprland/workspaces": {
+        "format": "{}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": " ",
+            "2": " ",
+            "3": " ",
+            "4": " ",
+            "5": " "
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": []
+        }
+    },
+    "custom/media": {
+        "format": "{}",
+        "return-type": "json",
+        "interval": 2,
+        "max-length": 50,
+        "exec": "python3 /home/dragon/.config/waybar/scripts/mediaplayer.py",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "tooltip": true
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C |",
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{}%  |",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": "{}%  |",
+        "max-length": 10
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}% |",
+        "format-bluetooth": "{volume}%  |",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "󰤥 {essid} 5G |",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "󰤭 |",
+        "on-click": "iwgtk",
+        "tooltip": false,
+        "max-length": 50
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "{:%d-%m-%Y}",
+        "max-length": 25
+    },
+    "battery": {
+        "bat": "BAT2",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}% |",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    }
+}

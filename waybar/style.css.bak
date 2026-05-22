@@ -1,0 +1,121 @@
+@import "colors/gruvbox-material.css";
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-size: 13px;
+    min-height: 0;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+.modules-right {
+    margin-right: 12px;
+}
+
+tooltip {
+    background: #121212;
+    border: 1px solid blue;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: #f5f5f5;
+    padding: 6px;
+}
+
+#workspaces {
+    background: #121212;
+    padding: 8px 5px;
+    border-radius: 15px;
+    color: #f5f5f5;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    margin: 0 3px;
+    border-radius: 50px;
+    color: transparent;
+    background: grey;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background-color: #3232ff;
+    min-width: 50px;
+    color: #f5f5f5;
+    transition: all 0.3s ease-in-out;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+#workspaces button:hover {
+    background-color: skyblue;
+    color: #f5f5f5;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
+}
+
+#workspaces button.urgent {
+    background-color: red;
+    color: #f5f5f5;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+}
+
+#custom-launcher,
+#custom-media,
+#clock,
+#network,
+#window,
+#pulseaudio,
+#custom-notification,
+#custom-pacman,
+#temperature {
+    background-color: #121212;
+    padding: 0 15px 0 15px;
+    margin: 0 0 0 12px;
+    border-radius: 50px;
+}
+
+#clock {
+    margin-right: 12px;
+    color: #008cff;
+}
+
+#network {
+    color: #c250c2;
+}
+
+#custom-launcher {
+    color: #6bb9d5;
+    font-size: 17px;
+}
+
+#pulseaudio {
+    color: #ffec16;
+}
+
+#custom-media {
+    color: aqua;
+}
+
+#custom-pacman {
+    color: #ff4823;
+}
+
+#temperature {
+    color: @red;
+}
+
+#temperature.critical {
+    background-color: red;
+    color: #f5f5f5;
+}

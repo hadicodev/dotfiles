@@ -1,0 +1,87 @@
+@import "colors/grey-material.css";
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-size: 11.5px;
+    min-height: 0;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: @bg4;
+}
+
+.modules-right {
+    margin-right: 12px;
+    color: @fg0;
+}
+
+tooltip {
+    background: transparent;
+}
+
+tooltip window {
+    background: transparent;
+}
+
+tooltip decoration {
+    background: transparent;
+}
+
+tooltip label {
+    background: @grey3;
+    border: 1px solid @select;
+    border-radius: 20px;
+    color: @fg0;
+    padding: 6px 12px;
+}
+
+#workspaces {
+    background: transparent;
+}
+
+#workspaces button {
+    color: @fg1;
+}
+
+#workspaces button.active {
+    color: @white;
+}
+
+#workspaces button:hover {
+    color: @white;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+#workspaces button.urgent {
+    color: @urgent;
+}
+
+#custom-launcher,
+#custom-media,
+#temperature,
+#cpu,
+#memory,
+#pulseaudio,
+#network,
+#clock,
+#battery {
+    margin: 0 0 0 12px;
+}
+
+#custom-launcher {
+    color: @fg0;
+    font-size: 15px;
+}
+
+#custom-media {
+    color: @fg0;
+}
+
+#temperature.critical {
+    color: @urgent;
+}
