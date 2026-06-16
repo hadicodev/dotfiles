@@ -1,7 +1,7 @@
 hl.on("hyprland.start", function()
 
   -- waybar daemon
-  hl.exec_cmd("/home/dragon/.config/waybar/scripts/laun  ch.sh")
+  hl.exec_cmd("/home/dragon/.config/waybar/scripts/launch.sh")
 
   -- notification daemon
   hl.exec_cmd("swaync &")
@@ -13,6 +13,6 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("hypridle")
 
   -- spotify notification
-  hl.exec_cmd("/home/dragon/.config/hypr/scripts/spotif  y-notify.sh")
+  hl.exec_cmd("/home/dragon/.config/hypr/scripts/spotify-notify.sh")
 
 end)

@@ -15,4 +15,4 @@
 
 /* Import color-scheme from `colors` directory */
 
-@import "~/.config/rofi/type-3/colors/tokyonight.rasi"
+@import "~/.config/rofi/type-2/colors/grey-material.rasi"

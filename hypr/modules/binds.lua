@@ -5,7 +5,7 @@
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "kitty yazi"
-local menu        = "./.config/rofi/type-3/launcher.sh"
+local menu        = "./.config/rofi/type-2/launcher.sh"
 
 ---------------------
 ---- KEYBINDINGS ----
@@ -39,39 +39,9 @@ hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "r" }))
 hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "u" }))
 hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "d" }))
 
--- wlogout
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))
-
--- Wallpaper changer
-hl.bind(mainMod .. " + P", function()
-    local handle = io.popen("ls /home/dragon/wallpapers/")
-    local files = {}
-    for file in handle:lines() do
-        table.insert(files, file)
-    end
-    handle:close()
-    if #files <= 1 then return end
-    local cur = io.popen("awww query")
-    local current = cur:read("*l")
-    cur:close()
-    current = current:match("image: (.+)") or ""
-    local filtered = {}
-    for _, f in ipairs(files) do
-        if "/home/dragon/wallpapers/" .. f ~= current then
-            table.insert(filtered, f)
-        end
-    end
-    if #filtered == 0 then return end
-    math.randomseed(os.time())
-    local picked = filtered[math.random(#filtered)]
-    local fullpath = "/home/dragon/wallpapers/" .. picked
-    hl.exec_cmd("awww img " .. fullpath ..
-        " --transition-type grow" ..
-        " --transition-pos 0.5,0.5" ..
-        " --transition-duration 1.8" ..
-        " --transition-fps 60"
-    )
-end)
+-- rofi dmenu
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("/home/dragon/.config/rofi/scripts/dmenu.sh"))
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("pkill wvkbd-mobintl || wvkbd-mobintl"))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]

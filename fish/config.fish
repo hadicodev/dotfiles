@@ -5,8 +5,6 @@ end
 
 starship init fish | source
 
-fish_add_path /home/dragon/.spicetify
-
 # aliases
 alias ..="cd .."
 alias mkdir="mkdir -p"
@@ -19,9 +17,16 @@ alias i="yay -S"
 alias r="yay -Rns"
 alias sklauncher="cd ~/Downloads && GDK_BACKEND=x11 SDL_VIDEODRIVER=x11 java -jar SKlauncher-3.2.18.jar"
 alias localsend="flatpak run org.localsend.localsend_app"
-alias weather="curl wttr.in"
 alias bluetooth="blueman-manager"
 alias wifi="iwgtk"
 alias qbittorrent="flatpak run org.qbittorrent.qBittorrent"
 alias audio="pavucontrol"
-alias Ss="yay -Ss"
+alias s="yay -Ss"
+alias unimatrix="unimatrix -a -f -s 95 -c green"
+
+# funtions
+function swapfiles
+    mv $argv[1] $argv[1].tmp
+    mv $argv[2] $argv[1]
+    mv $argv[1].tmp $argv[2]
+end

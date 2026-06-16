@@ -8,6 +8,7 @@
         "custom/media"
     ],
     "modules-right": [
+        "custom/pacman",
         "temperature",
         "cpu",
         "memory",
@@ -49,6 +50,13 @@
         "on-scroll-down": "playerctl previous",
         "tooltip": true
     },
+    "custom/pacman": {
+        "format": " {} |",
+        "interval": 3600,
+        "return-type": "json",
+        "exec": "bash ~/.config/waybar/scripts/updates.sh",
+        "on-click": "kitty --hold -e bash -c 'yay -Syu && flatpak update'"
+    },
     "temperature": {
         "critical-threshold": 80,
         "format": "{temperatureC}°C |",
@@ -66,7 +74,7 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}% |",
-        "format-bluetooth": "{volume}%  |",
+        "format-bluetooth": " {volume}% |",
         "format-muted": "",
         "format-icons": {
             "headphone": "",

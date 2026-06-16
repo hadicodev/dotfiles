@@ -1,1 +1,1 @@
-./.config/rofi/type-3/launcher.sh
+./.config/rofi/type-2/launcher.sh

@@ -30,7 +30,7 @@ hl.window_rule({
     no_focus = true,
 })
 
-hl.layer_rule({ match = { namespace = "rofi" }, animation = "popin", dim_around = true })                        -- rofi
+hl.layer_rule({ match = { namespace = "rofi" }, animation = "popin", dim_around = false })                        -- rofi
 
 hl.layer_rule({ match = { namespace = "swaync-control-center" }, animation = "slide right", dim_around = true }) -- swaync
 
